@@ -17,6 +17,9 @@ import {
   collection,
   onSnapshot,
   addDoc,
+  updateDoc,
+  increment,
+  doc,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -65,5 +68,15 @@ export const addSuggestion = (suggestion) => {
     name: suggestion.name,
     description: suggestion.description,
     type: suggestion.type,
+    likes: 0,
+  });
+};
+
+// Add a like to a suggestion
+export const likeSuggestion = (id) => {
+  const docRef = doc(db, "suggestions", id);
+
+  updateDoc(docRef, {
+    likes: increment(1),
   });
 };

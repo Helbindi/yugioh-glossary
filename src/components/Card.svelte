@@ -11,5 +11,6 @@
 		border-radius: 1em;
 		box-shadow: 5px 5px 5px gray;
         max-width: 1000px;
+        position: relative;
     }
 </style>

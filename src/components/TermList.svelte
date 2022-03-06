@@ -1,7 +1,7 @@
 <script>
     import { apiData } from '../stores';
     import { fade, scale } from 'svelte/transition'
-    import Term from './Term.svelte'
+    import TermItem from './TermItem.svelte'
 
     export let filter;
     
@@ -12,10 +12,10 @@
 <div class="terms-container">
     {#each $apiData as term}
         {#if filter === 'All'}
-            <Term {term}/>
+            <TermItem {term}/>
         {:else if term.name.startsWith(filter)}
             <div in:scale>
-                <Term {term}/>
+                <TermItem {term}/>
             </div>
         {/if}
     {/each}

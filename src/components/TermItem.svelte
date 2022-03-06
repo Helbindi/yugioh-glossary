@@ -1,5 +1,6 @@
 <script>
     import Card from './Card.svelte'
+
     export let term
 </script>
 
